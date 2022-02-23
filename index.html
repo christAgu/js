@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping List App</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+
+  <div id="shopping-list">
+    <h1>{{ header}}</h1>
+    <ul>
+        <li v-for="item in items" :key="item.id" >{{item.label}}</li>
+    </ul>
+    <input v-model="header">
+  </div>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+
+    Vue.createApp({
+      data() {
+        return {
+          header: 'View is ready to party',
+          
+          items: [
+            {id:1, label: '2 chouse of girls'},
+            {id:2, label: '9 chouse of girls'},
+            {id:3, label: '7 chouse of girls'}
+              
+          ]
+        }
+      }
+    }).mount('#shopping-list')
+  </script>
+</body>
+
+</html> 
